@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h1>Geometria</h1>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="flash-error px-3">
+    <!--  passo 4 percorrer a lista de msg   -->
+    {% for category, message in messages %}
+    <div class="alert {{ category }} alert-dismissible fade show px-5" role="alert">
+        <strong>{{ message }}</strong>.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+<div class="calculos">
+
+    <div class="card_operacao">
+        <h2> Area Triangulo</h2>
+        <form class="form-soma" action="{{ url_for('area_triangulo') }}" method="post">
+            <label>
+                <input placeholder="Digite a base" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <label>
+                <input placeholder="Digite a altura" name="form-n2" class="form-control">
+            </label>
+
+            <p class="resultado">
+                {% if area_t is defined %}
+                base {{ n1 }}, altura {{ n2 }} = {{ area_t }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion1">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                        <h3>Area triangulo</h3>
+                        <p>Base vezes altura dividido por 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_operacao">
+        <h2> Area Quadrado</h2>
+        <form class="form-soma" action="{{ url_for('area_quadrado') }}" method="post">
+            <label>
+                <input placeholder="Digite a base" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <label>
+                <input placeholder="Digite a altura" name="form-n2" class="form-control">
+            </label>
+
+            <p class="resultado">
+                {% if area_q is defined %}
+                base {{ n1 }}, altura {{ n2 }} = {{ area_q }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion2">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                        <h3>Area Quadrado</h3>
+                        <p>Lado vezes lado dividido por 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_operacao">
+        <h2> Area Circulo</h2>
+        <form class="form-soma" action="{{ url_for('area_circulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um numero" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <label>
+                <input placeholder="Digite outro numero" name="form-n2" class="form-control">
+            </label>
+
+            <p class="resultado">
+                {% if area_c is defined %}
+                base {{ n1 }}, altura {{ n2 }} = {{ area_c }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion3">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                        <h3>Area Circulo</h3>
+                        <p>Lado vezes lado dividido por 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2> Area Hexagono</h2>
+        <form class="form-soma" action="{{ url_for('area_hexagono') }}" method="post">
+            <label>
+                <input placeholder="Digite um numero" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <label>
+                <input placeholder="Digite outro numero" name="form-n2" class="form-control">
+            </label>
+
+            <p class="resultado">
+                {% if area_h is defined %}
+                base {{ n1 }}, altura {{ n2 }} = {{ area_h }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion4">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                        <h3>Area Hexagono</h3>
+                        <p>Lado vezes lado dividido por 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card_operacao">
+        <h2> Perimetro Triangulo</h2>
+        <form class="form-soma" action="{{ url_for('perimetro_triangulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um numero" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <label>
+                <input placeholder="Digite outro numero" name="form-n2" class="form-control">
+            </label>
+
+            <label>
+                <input placeholder="Digite um numero" name="form-n3" class="form-control">
+            </label>
+            <p class="resultado">
+                {% if peri_t is defined %}
+                {{ n1 }}+{{ n2 }}+{{n3}} = {{ peri_t }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion5">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                        <h3>Perimetro Triangulo</h3>
+                        <p>A soma de todos os lados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2> Perimetro Quadrado</h2>
+        <form class="form-soma" action="{{ url_for('perimetro_quadrado') }}" method="post">
+            <label>
+                <input placeholder="Digite um numero" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <!--            <label>-->
+            <!--                <input placeholder="Digite outro numero" name="form-n2" class="form-control">-->
+            <!--            </label>-->
+
+            <!--            <label>-->
+            <!--                <input placeholder="Digite um numero" name="form-n3" class="form-control">-->
+            <!--            </label>-->
+            <p class="resultado">
+                {% if peri_q is defined %}
+                {{ n1 }} = {{ peri_q }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion6">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+                    <div class="accordion-body">
+                        <h3>Perimetro</h3>
+                        <p>Soma de todos os lados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card_operacao">
+        <h2> Perimetro Circulo</h2>
+        <form class="form-soma" action="{{ url_for('perimetro_circulo') }}" method="post">
+            <label>
+                <input placeholder="Digite um numero" name="form-n1" class="form-control">
+            </label>
+
+            <!--            <p class="operador">Calcular area</p>-->
+
+            <!--            <label>-->
+            <!--                <input placeholder="Digite outro numero" name="form-n2" class="form-control">-->
+            <!--            </label>-->
+
+            <!--            <label>-->
+            <!--                <input placeholder="Digite um numero" name="form-n3" class="form-control">-->
+            <!--            </label>-->
+            <p class="resultado">
+                {% if peri_c is defined %}
+                {{ n1 }} = {{ peri_c }}
+                {% else %}
+                {% endif %}
+            </p>
+
+            <button type="submit" class="btn btn-info">Ver area</button>
+        </form>
+        <div class="accordion" id="accordion7">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <i class="bi bi-info-circle"></i> Como calcular?
+                    </button>
+                </h2>
+                <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
+                    <div class="accordion-body">
+                        <h3>Perimetro Circulo</h3>
+                        <p>Soma de todos os lados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

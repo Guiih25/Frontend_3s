@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="card">
+    <form action="{{url_for('novo_funcionario')}}" method="post">
+         <h2>Criar funcionario</h2>
+
+        <label>Nome</label>
+        <input type="text" name="form-nome" placeholder="Digite seu nome" required>
+
+        <label>Data de nascimento</label>
+        <input type="text" name="form-data" placeholder="Digite sua data" required>
+
+        <label>Cpf</label>
+        <input type="text" name="form-cpf" placeholder="Digite seu nome" required>
+
+        <label>Email</label>
+        <input type="email" name="form-email" placeholder="Digite seu email" required>
+
+        <label>Senha</label>
+        <input type="password" name="form-senha" placeholder="Crie uma senha" required>
+
+        <label>Cargo</label>
+        <input type="text" name="form-cargo" placeholder="Digite seu nome" required>
+
+        <label>Salario</label>
+        <input type="text" name="form-salario" placeholder="Digite seu nome" required>
+
+        <button type="submit">Cadastrar</button>
+
+        <a href="{{url_for('login')}}" class="link">
+            Já tem conta? Entrar
+        </a>
+    </form>
+</div>
+
+{% endblock %}

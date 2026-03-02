@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="pai_login">
+    <div class="card_login">
+        <h3>Login</h3>
+        <form action="{{url_for('login')}}" method="post">
+            <label>Cpf:</label><br>
+            <input placeholder="Digite seu email" name="form-email" type="email">
+            <br>
+            <label>Senha</label><br>
+            <input placeholder="Digite sua senha" name="form-senha" type="password"><br>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+
+</div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Novo Funcionario
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-soma" action="{{ url_for('tabela_cadastro') }}" method="post">
+                    <label> Nome
+                        <input placeholder="Digite um nome" name="form-nome" class="form-control" required>
+                    </label>
+
+                    <label> Data
+                        <input placeholder="Digite sua data de nascimento" type="date" name="form-data" class="form-control" required>
+                    </label>
+                    <label> Cpf
+                        <input placeholder="Digite seu cpf" name="form-cpf" class="form-control" required>
+                    </label>
+                    <label> Email
+                        <input placeholder="Digite seu email" type="email" name="form-email" class="form-control" required>
+                    </label>
+                    <label> Senha
+                        <input placeholder="Digite sua senha" name="form-senha" class="form-control" required>
+                    </label>
+                    <label> Cargo
+                        <input placeholder="Digite seu cargo" name="form-cargo" class="form-control" required>
+                    </label>
+                    <label> Salario
+                        <input placeholder="Digite seu salario" type="number" name="form-salario" class="form-control" required>
+                    </label>
+
+                    <button type="submit" class="btn btn-info">cadastrar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
