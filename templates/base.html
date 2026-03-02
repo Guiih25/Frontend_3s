@@ -9,6 +9,9 @@
     <!--    bootstrap icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/static/css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -17,9 +20,9 @@
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('calculos') }}">Cálculos</a></li>
         <li><a href="{{ url_for('funcionario') }}">Funcionarios</a></li>
-<!--        mostrar o usuario  -->
+        <!--        mostrar o usuario  -->
         {% if current_user.is_authenticated %}
-            <li><a data-bs-toggle="modal" data-bs-target="#modalLogout" href="">{{ current_user.nome }}</a></li>
+        <li><a data-bs-toggle="modal" data-bs-target="#modalLogout" href="">{{ current_user.nome }}</a></li>
         {% else %}
         <li><a href="{{ url_for('login') }}"><i class="bi bi-person-circle"></i> Login</a></li>
         {% endif %}
