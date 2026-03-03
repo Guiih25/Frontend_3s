@@ -200,3 +200,9 @@ a {
   font-weight: <weight>;
   font-style: normal;
 }
+
+
+.pai_cursos{
+    display: flex;
+
+}
