@@ -253,10 +253,27 @@ input:focus {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 10px;
+}
+.button_login_cancelar{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #eb2525;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 10px;
 }
 
 .button_login:hover {
     background: #1e40af;
+    transform: translateY(-2px);
+}
+.button_login_cancelar:hover{
+    background: #af1e1e;
     transform: translateY(-2px);
 }
 
