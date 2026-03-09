@@ -118,7 +118,6 @@ a {
     flex-direction: column;
     gap: 8px;
     padding: 14px;
-    width: px;
 
 
 }
@@ -131,12 +130,12 @@ a {
     font-size: 26px;
 }
 
-.icon_calculo{
+.icon_calculo {
     font-size: 28px;
     color: rgba(36, 61, 111, 0.56);
 }
 
-.card_login{
+.card_login {
     display: flex;
     flex-direction: column;
     height: 370px;
@@ -146,23 +145,25 @@ a {
     border-radius: 20px;
     border: 1px solid black;
 }
-.card_login h3{
+
+.card_login h3 {
     text-align: center;
 }
 
-.card_login input{
+.card_login input {
     width: 250px;
     padding: 5px;
     margin-top: 15px;
     border-radius: 10px;
 }
-.pai_login{
+
+.pai_login {
     margin-top: 75px;
     display: flex;
     justify-content: center;
 }
 
-.card_login button{
+.card_login button {
     background-color: cornflowerblue;
     width: 150px;
     border-radius: 10px;
@@ -171,39 +172,33 @@ a {
     padding: 5px;
 }
 
-.logout_a{
+.logout_a {
     color: black;
     background-color: black;
 }
 
-.carrosel{
+.carrosel {
     height: 100vh;
 }
 
-.title-senai{
-    font-family: Orbitron;
+.title-senai {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
-.subtitle-senai{
+
+.subtitle-senai {
     font-family: Calibri;
 }
-.cursos{
+
+.cursos {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
 
-
-
-.orbitron-<uniquifier> {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-
-.pai_cursos{
+.pai_cursos {
     display: flex;
 
 }
@@ -214,7 +209,7 @@ a {
     border-radius: 16px;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -281,5 +276,5 @@ input:focus {
     color: white;
     border-radius: 8px;
     font-weight: 500;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
