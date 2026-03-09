@@ -41,8 +41,10 @@ def login():
             else:
                 flash('email não encontrado', 'danger')
                 return render_template("login.html")
-    else:
-        return render_template('login.html')
+        return render_template("login.html")
+
+
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():
@@ -309,7 +311,9 @@ def perimetro_circulo():
             flash("O campo esta vazio", 'alert-danger')
     return render_template("geometria.html")
 
-
+@app.route('/animais')
+def animais():
+    return render_template('animais.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

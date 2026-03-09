@@ -7,13 +7,13 @@
             <h2>Entrar</h2>
 
             <label>Email</label>
-            <input id="input-email" type="text" name="form-email" placeholder="Digite seu email">
+            <input id="input-email" class="form-control" type="text" name="form-email" placeholder="Digite seu email">
 
             <label>Senha</label>
-            <input id="input-senha" type="password" name="form-senha" placeholder="Digite sua senha">
+            <input id="input-senha" class="form-control" type="password" name="form-senha" placeholder="Digite sua senha">
 
             <button type="submit" class="button_login">Entrar</button>
-            <button class="button_login_cancelar btn-danger" onclick="limpaInputsLogin()">Cancelar</button>
+            <a class="button_login_cancelar btn-danger" onclick="limpaInputsLogin()">Cancelar</a>
 
         </form>
     </div>
@@ -32,34 +32,35 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="form-soma" action="{{ url_for('tabela_cadastro') }}" method="post">
+                <form id="form-modal" class="form-soma" action="{{ url_for('tabela_cadastro') }}" method="post">
                     <label> Nome
-                        <input placeholder="Digite um nome" name="form-nome" class="form-control" required>
+                        <input id="input-nome" placeholder="Digite um nome" name="form-nome" class="form-control" required>
                     </label>
 
                     <label> Data
-                        <input placeholder="Digite sua data de nascimento" type="date" name="form-data"
+                        <input id="input-data" placeholder="Digite sua data de nascimento" type="date" name="form-data"
                                class="form-control" required>
                     </label>
                     <label> Cpf
-                        <input placeholder="Digite seu cpf" name="form-cpf" class="form-control" required>
+                        <input id="input-cpf" placeholder="Digite seu cpf" name="form-cpf" class="form-control" required>
                     </label>
                     <label> Email
-                        <input placeholder="Digite seu email" type="email" name="form-email" class="form-control"
+                        <input id="input-email2" placeholder="Digite seu email" type="email" name="form-email" class="form-control"
                                required>
                     </label>
                     <label> Senha
-                        <input placeholder="Digite sua senha" name="form-senha" class="form-control" required>
+                        <input id="input-senha2" placeholder="Digite sua senha" name="form-senha" class="form-control" required>
                     </label>
                     <label> Cargo
-                        <input placeholder="Digite seu cargo" name="form-cargo" class="form-control" required>
+                        <input id="input-cargo" placeholder="Digite seu cargo" name="form-cargo" class="form-control" required>
                     </label>
                     <label> Salario
-                        <input placeholder="Digite seu salario" type="number" name="form-salario" class="form-control"
+                        <input id="input-salario" placeholder="Digite seu salario" type="number" name="form-salario" class="form-control"
                                required>
                     </label>
 
                     <button type="submit" class="btn btn-info">cadastrar</button>
+                    <button class="btn btn-info" onclick="limpaInputsModal()">Cancelar</button>
                 </form>
             </div>
             <div class="modal-footer">
