@@ -107,7 +107,7 @@ def geometria():
 
 
 @app.route('/tabela_cadastro', methods=['GET', 'POST'])  # Adicionado methods
-def tabela_cadastro():00
+def tabela_cadastro():
     if request.method == 'POST':
         nome = request.form.get('form-nome')
         data_nascimento = request.form.get('form-data')
