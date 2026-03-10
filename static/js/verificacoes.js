@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Preencha todos os erros")
         }
     })
+
     const formModal = document.getElementById('form-modal')
+
     formModal.addEventListener("submit", function (event) {
         const inputNome = document.getElementById('input-nome')
         const inputData = document.getElementById('input-data')
