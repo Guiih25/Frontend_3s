@@ -29,6 +29,7 @@
         <li><a href="{{ url_for('calculos') }}">Cálculos</a></li>
         <li><a href="{{ url_for('funcionario') }}">Funcionarios</a></li>
         <li><a href="{{ url_for('animais') }}">Animais</a></li>
+        <li><a href="{{ url_for('listar_gatos') }}">Gatos</a></li>
         <!--        mostrar o usuario  -->
         {% if current_user.is_authenticated %}
         <li><a data-bs-toggle="modal" data-bs-target="#modalLogout" href="">{{ current_user.nome }}</a></li>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="d-flex flex-column gap-4">
+    {% if gatos %}
+    {% for gato in gatos %}
+    <!-- Abyssinian Card -->
+    <div class="cat-card d-flex flex-column flex-md-row">
+        <div class="cat-image-container flex-shrink-0">
+            <img alt="Abyssinian" class="cat-image"
+                 src="{{ gato.image }}"/>
+            <span class="favorite-badge">Favorito</span>
+        </div>
+        <div class="p-4 p-lg-5 flex-grow-1">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start mb-3">
+                <div>
+                    <h3 class="h2 fw-bold mb-1">{{ gato.name }}</h3>
+                    <div class="d-flex align-items-center gap-1 text-primary small fw-bold text-uppercase">
+                        <span class="material-symbols-outlined fs-6">{{ gato.origin }}</span>
+                    </div>
+                </div>
+                <span class="text-muted small fst-italic">{{ gato.life_span }}</span>
+            </div>
+            <p>
+                {{ gato.description }}
+            </p>
+            <div class="mb-4">
+                {% for batata in gato.temperament %}
+                <span class="breed-tag">{{ batata }}</span>
+
+                {% endfor %}
+            </div>
+            <div class="row g-4 mb-4">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h3>Nenhum gato</h3>
+    {% endif %}
+
+
+    {% endblock %}

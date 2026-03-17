@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 from sqlalchemy.exc import SQLAlchemyError
 
+from api_routes import routes
 from database import db_session,local_session, Funcionario
 from sqlalchemy import select, and_, func
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
@@ -102,6 +103,13 @@ def funcionario():
 def operacoes():
     return render_template("operacoes.html")
 
+@app.route('/gatos')
+def listar_gatos():
+    gatos = routes.get_gatos()
+    for gato in gatos:
+        gato["temperament"] = gato["temperament"].split(',')
+        gato["image"] = routes.get_image()["url"]
+    return render_template("gatos.html", gatos=gatos)
 
 @app.route('/geometria')
 def geometria():
